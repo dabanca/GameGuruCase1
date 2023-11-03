@@ -7,11 +7,9 @@ namespace _Project.Scripts.Core.GridItem
     [Serializable]
     public class GridItem 
     {
-        public GridItemType GridItemType { get; }
+        public bool CanInteract { get; set; }
+        public GridItemType GridItemType { get; set; }
         public GridCell GridCell { get; set; }
-        public GridItem(GridItemType gridItemType)
-        {
-            GridItemType = gridItemType;
-        }
+       
     }
 }

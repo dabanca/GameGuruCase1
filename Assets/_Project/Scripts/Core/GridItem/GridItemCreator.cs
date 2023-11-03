@@ -1,4 +1,3 @@
-using _Project.Scripts.Core.Collections;
 using _Project.Scripts.Core.Grid;
 using _Project.Scripts.Core.Grid.RuntimeData;
 using _Project.Scripts.Engine.GridItem;
@@ -12,7 +11,7 @@ namespace _Project.Scripts.Core.GridItem
 
         public void SetGridItemViewPrefab(GridItemView gridItemView)
         {
-            _gridItemView = gridItemView;
+            _gridItemView = gridItemView;   
         }
         public void CreateGridItem(GridCellDataContainer gridCellData,GridData gridData,Transform parentTransform)
         {
@@ -22,7 +21,7 @@ namespace _Project.Scripts.Core.GridItem
             var itemView = Object.Instantiate(_gridItemView, parentTransform, true);
             
             itemView.name = $"[{x},{y}]";
-            itemView.SetGridItem(new GridItem(GridItemType.Basic));
+            itemView.SetGridItem(new BasicGridItem());
             itemView.GridItem.GridCell = gridData.GetCell(x, y);
             itemView.transform.position = new Vector3(x, y, 0);
         }

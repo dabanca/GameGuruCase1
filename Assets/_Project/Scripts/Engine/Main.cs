@@ -12,16 +12,19 @@ namespace _Project.Scripts.Engine
         public GridData GridData { get; private set; }
 
         [SerializeField] private GridCellView _gridCellViewPrefab;
-        [SerializeField] private GridItemView _gridItemViewPrefab;
+        
+        [SerializeField] private GridItemView _basicGridItemViewPrefab;
+        [SerializeField] private GridItemView _signedGridItemViewPrefab;
         private void Start()
         {
             LevelCreator = new LevelCreator();
             GridData = new GridData();
             
             LevelCreator.GridCellCreator.SetGridCellViewPrefab(_gridCellViewPrefab);
-            LevelCreator.GridItemCreator.SetGridItemViewPrefab(_gridItemViewPrefab);
+            LevelCreator.GridItemCreator.SetGridItemViewPrefab(_basicGridItemViewPrefab);
             
             LevelCreator.Create(GridData);
+            CameraController.Instance.PositionCamera(GridData);
         }
     }
 }
