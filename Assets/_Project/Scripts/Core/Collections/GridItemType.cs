@@ -1,8 +1,8 @@
 namespace _Project.Scripts.Core.Collections
 {
-    public enum GridType
+    public enum GridItemType
     {
-        Default,
-        Void,
+        Basic,
+        Signed,
     }
 }
