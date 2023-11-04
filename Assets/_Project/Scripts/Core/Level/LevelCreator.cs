@@ -1,15 +1,17 @@
+using System.Threading.Tasks;
 using _Project.Scripts.Core.Grid;
 using _Project.Scripts.Core.Grid.RuntimeData;
 using _Project.Scripts.Core.GridItem;
 using _Project.Scripts.Engine;
+using _Project.Scripts.Engine.GridItem;
 using UnityEngine;
 
 namespace _Project.Scripts.Core.Level
 {
     public class LevelCreator
     {
-        public readonly GridCellCreator GridCellCreator = new GridCellCreator();
-        public readonly GridItemCreator GridItemCreator= new GridItemCreator();
+        public readonly GridCellCreator _gridCellCreator = new GridCellCreator();
+        public readonly GridItemCreator _gridItemCreator= new GridItemCreator();
         
         private readonly LayerTransformCreator _layerTransformCreator = new LayerTransformCreator();
 
@@ -18,16 +20,16 @@ namespace _Project.Scripts.Core.Level
         
         private GridCellDataContainer[,] _gridCellDataContainers;
         
-        public void Create(GridData gridData)
+        public async Task Create()
         {
             var levelData = LevelDataLoader.GetCurrentLevelFromDisk();
-            InitBoardData(levelData,gridData);
-            CreateLevel(levelData,gridData);
+            InitBoardData(levelData);
+            await CreateLevel(levelData);
         }
         
-        private void InitBoardData(LevelDataSo levelData, GridData gridData)
-        { 
-            gridData.Init(levelData);
+        private void InitBoardData(LevelDataSo levelData)
+        {
+            GridData.Init(levelData);
             CreateLayers();
         }
 
@@ -41,35 +43,38 @@ namespace _Project.Scripts.Core.Level
             _itemLayer = _layerTransformCreator.ItemLayer;
         }
 
-        private void CreateLevel(LevelDataSo levelData, GridData gridData)
+        private async Task CreateLevel(LevelDataSo levelData)
         {
-            CreateGridCells(levelData);
-            CreateGridItems(levelData,gridData);
+            var poolTask = GridItemViewPoolHandler.Instance.InitTileViewPool();
+            await Task.WhenAll(poolTask);
+            
+            await CreateGridCells(levelData);
+            CreateGridItems(levelData);
         }
 
-        private void CreateGridItems(LevelDataSo levelData, GridData gridData)
+        private void CreateGridItems(LevelDataSo levelData)
         {
             var xSize = levelData.xSize;
             var ySize = levelData.ySize;
 
             for (var x = 0; x < xSize; x++)
             for (var y = 0; y < ySize; y++)
-                GridItemCreator.CreateGridItem(_gridCellDataContainers[x, y],gridData,_itemLayer);
+                _gridItemCreator.CreateGridItem(_gridCellDataContainers[x, y],_itemLayer);
         }
 
-        private void CreateGridCells(LevelDataSo levelData)
+        private async Task CreateGridCells(LevelDataSo levelData)
         {
-            ChangeItemDataListTo2DArray(levelData);
+            ChangeCellDataListTo2DArray(levelData);
 
             var xSize = levelData.xSize;
             var ySize = levelData.ySize;
 
             for (var x = 0; x < xSize; x++)
-            for (var y = 0; y < ySize; y++) 
-                GridCellCreator.CreateGridCell(_gridCellDataContainers[x, y],_cellLayer);
+            for (var y = 0; y < ySize; y++)
+             await _gridCellCreator.CreateGridCell(_gridCellDataContainers[x, y],_cellLayer);
         }
 
-        private void ChangeItemDataListTo2DArray(LevelDataSo levelData)
+        private void ChangeCellDataListTo2DArray(LevelDataSo levelData)
         {
             _gridCellDataContainers = new GridCellDataContainer[levelData.xSize, levelData.ySize];
             foreach (var container in levelData.GridCellDataContainers)

@@ -18,76 +18,101 @@ MonoBehaviour:
   GridCellDataContainers:
   - CoordX: 0
     CoordY: 0
+    GridType: 0
     GridItemType: 0
   - CoordX: 0
     CoordY: 1
+    GridType: 0
     GridItemType: 0
   - CoordX: 0
     CoordY: 2
+    GridType: 0
     GridItemType: 0
   - CoordX: 0
     CoordY: 3
+    GridType: 0
     GridItemType: 0
   - CoordX: 0
     CoordY: 4
+    GridType: 0
     GridItemType: 0
   - CoordX: 1
     CoordY: 0
+    GridType: 0
     GridItemType: 0
   - CoordX: 1
     CoordY: 1
+    GridType: 0
     GridItemType: 0
   - CoordX: 1
     CoordY: 2
+    GridType: 0
     GridItemType: 0
   - CoordX: 1
     CoordY: 3
+    GridType: 0
     GridItemType: 0
   - CoordX: 1
     CoordY: 4
+    GridType: 0
     GridItemType: 0
   - CoordX: 2
     CoordY: 0
+    GridType: 0
     GridItemType: 0
   - CoordX: 2
     CoordY: 1
+    GridType: 0
     GridItemType: 0
   - CoordX: 2
     CoordY: 2
+    GridType: 0
     GridItemType: 0
   - CoordX: 2
     CoordY: 3
+    GridType: 0
     GridItemType: 0
   - CoordX: 2
     CoordY: 4
+    GridType: 0
     GridItemType: 0
   - CoordX: 3
     CoordY: 0
+    GridType: 0
     GridItemType: 0
   - CoordX: 3
     CoordY: 1
+    GridType: 0
     GridItemType: 0
   - CoordX: 3
     CoordY: 2
+    GridType: 0
     GridItemType: 0
   - CoordX: 3
     CoordY: 3
+    GridType: 0
     GridItemType: 0
   - CoordX: 3
     CoordY: 4
+    GridType: 0
     GridItemType: 0
   - CoordX: 4
     CoordY: 0
+    GridType: 0
     GridItemType: 0
   - CoordX: 4
     CoordY: 1
+    GridType: 0
     GridItemType: 0
   - CoordX: 4
     CoordY: 2
+    GridType: 0
     GridItemType: 0
   - CoordX: 4
     CoordY: 3
+    GridType: 0
     GridItemType: 0
   - CoordX: 4
     CoordY: 4
+    GridType: 0
     GridItemType: 0

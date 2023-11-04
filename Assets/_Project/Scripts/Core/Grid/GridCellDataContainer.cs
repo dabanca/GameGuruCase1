@@ -8,7 +8,8 @@ namespace _Project.Scripts.Core.Grid
     {
         public int CoordX = -1;
         public int CoordY = -1;
-        
+
+        public GridType GridType;
         public GridItemType GridItemType;
     }
 }

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: GridItem
+  m_EditorClassIdentifier: 
+  m_GroupName: GridItem
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 530f813ec1f767540a856d9c3b0dc4b6
+  m_SerializeEntries:
+  - m_GUID: 431683a925c49a945b4ba78464b4e617
+    m_Address: Assets/Prefabs/BasicGridItemPrefab.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e275a058f98bf8e40ac647b919d4df28
+    m_Address: Assets/Prefabs/SignedGridItemView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 8f6aacfa19cffb34188e80a093fa1783, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1c85825b8a5b5194e8396087dd81a1e1, type: 2}
+    - {fileID: 11400000, guid: 44f7d00b640184c42b488c9e52f54b77, type: 2}

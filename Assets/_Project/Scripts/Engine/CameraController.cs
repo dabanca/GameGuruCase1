@@ -9,11 +9,11 @@ namespace _Project.Scripts.Engine
         [SerializeField] private Camera cam;
         public Camera Camera => cam;
         
-        public void PositionCamera(GridData gridData)
+        public void PositionCamera()
         {
             const float z = -5f;
 
-            transform.position = new Vector3(0.5f * (gridData.Size.x - 1), (0.5f * (gridData.Size.y - 1)), z);
+            transform.position = new Vector3(0.5f * (GridData.Size.x - 1), (0.5f * (GridData.Size.y - 1)), z);
         }
     }
 }

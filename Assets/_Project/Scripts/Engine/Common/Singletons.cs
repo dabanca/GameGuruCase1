@@ -8,6 +8,7 @@ namespace _Project.Scripts.Engine.Common
         public static readonly Dictionary<Type, string> TypeNameMap = new Dictionary<Type, string>
         {
             {typeof(CameraController), "MainCamera"},
+            {typeof(MonoViewLoader), "MonoViewLoader"},
         };
     }
 }

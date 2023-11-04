@@ -10,6 +10,5 @@ namespace _Project.Scripts.Core.GridItem
         public bool CanInteract { get; set; }
         public GridItemType GridItemType { get; set; }
         public GridCell GridCell { get; set; }
-       
     }
 }
