@@ -7,7 +7,6 @@ namespace _Project.Scripts.Core.GridItem
         public BasicGridItem()
         {
             GridItemType = GridItemType.Basic;
-            CanInteract = true;
         }
     }
 }

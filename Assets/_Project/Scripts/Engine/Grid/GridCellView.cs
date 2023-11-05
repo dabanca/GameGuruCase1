@@ -6,16 +6,16 @@ namespace _Project.Scripts.Engine.Grid
 {
     public class GridCellView : MonoBehaviour
     {
-        public GridCell GridCell { get; private set; }
+        private GridCell _gridCell;
         public void SetGridCell(GridCell cell)
         {
-            GridCell = cell;
+            _gridCell = cell;
         }
         public void Init(Transform parentTransform,int x, int y)
         {
             name = $"[{x},{y}]";
-            GridCell.SetCoordinate(x,y);
-            GridData.SetCell(x,y,GridCell);
+            _gridCell.SetCoordinate(x,y);
+            GridData.SetCell(x,y,_gridCell);
             transform.position = new Vector3(x, y, 0);
             transform.SetParent(parentTransform);
         }

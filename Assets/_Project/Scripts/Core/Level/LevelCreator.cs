@@ -10,16 +10,13 @@ namespace _Project.Scripts.Core.Level
 {
     public class LevelCreator
     {
-        public readonly GridCellCreator _gridCellCreator = new GridCellCreator();
-        public readonly GridItemCreator _gridItemCreator= new GridItemCreator();
-        
+        private readonly GridCellCreator _gridCellCreator = new GridCellCreator();
+        private readonly GridItemCreator _gridItemCreator= new GridItemCreator();
         private readonly LayerTransformCreator _layerTransformCreator = new LayerTransformCreator();
 
         private Transform _cellLayer;
         private Transform _itemLayer;
-        
         private GridCellDataContainer[,] _gridCellDataContainers;
-        
         public async Task Create()
         {
             var levelData = LevelDataLoader.GetCurrentLevelFromDisk();
@@ -50,6 +47,7 @@ namespace _Project.Scripts.Core.Level
             
             await CreateGridCells(levelData);
             CreateGridItems(levelData);
+            SetNeighbours();
         }
 
         private void CreateGridItems(LevelDataSo levelData)
@@ -72,6 +70,16 @@ namespace _Project.Scripts.Core.Level
             for (var x = 0; x < xSize; x++)
             for (var y = 0; y < ySize; y++)
              await _gridCellCreator.CreateGridCell(_gridCellDataContainers[x, y],_cellLayer);
+        }
+
+        private void SetNeighbours()
+        {
+            var xSize = GridData.Size.x;
+            var ySize =  GridData.Size.y;
+
+            for (var x = 0; x < xSize; x++)
+            for (var y = 0; y < ySize; y++)
+                GridData.GetCell(x,y).FindNeighbours();
         }
 
         private void ChangeCellDataListTo2DArray(LevelDataSo levelData)

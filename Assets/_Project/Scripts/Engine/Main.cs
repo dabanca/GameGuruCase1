@@ -6,14 +6,13 @@ namespace _Project.Scripts.Engine
 { 
     public class Main : MonoBehaviour
     {
-        private LevelCreator LevelCreator { get; set; }
-
+        private LevelCreator _levelCreator;
         private async void Start()
         {
             SetGridItemViewPool();
-            LevelCreator = new LevelCreator();
+            _levelCreator = new LevelCreator();
 
-            await LevelCreator.Create();
+            await _levelCreator.Create();
             CameraController.Instance.PositionCamera();
         }
         

@@ -2,10 +2,10 @@ namespace _Project.Scripts.Core.Collections
 {
     public enum Directions
     {
-        None,
-        Top,
-        Bottom,
+        Center,
         Right,
-        Left
+        Top,
+        Left,
+        Bottom,
     }
 }

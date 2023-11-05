@@ -7,7 +7,6 @@ namespace _Project.Scripts.Core.GridItem
         public SignedGridItem()
         {
             GridItemType = GridItemType.Signed;
-            CanInteract = false;
         }
     }
 }

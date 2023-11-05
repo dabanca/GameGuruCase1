@@ -8,7 +8,6 @@ namespace _Project.Scripts.Core.Level
     public class LevelDataSo : ScriptableObject
     {
         public int xSize, ySize;
-        public int LevelNumber;
 
         public List<GridCellDataContainer> GridCellDataContainers;
     }

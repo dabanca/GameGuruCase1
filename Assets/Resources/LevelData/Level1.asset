@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb1d8956f9698347af5720dcd26da2f, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  xSize: 5
-  ySize: 5
-  LevelNumber: 1
+  xSize: 6
+  ySize: 6
   GridCellDataContainers:
   - CoordX: 0
     CoordY: 0
@@ -36,6 +35,10 @@ MonoBehaviour:
     CoordY: 4
     GridType: 0
     GridItemType: 0
+  - CoordX: 0
+    CoordY: 5
+    GridType: 0
+    GridItemType: 0
   - CoordX: 1
     CoordY: 0
     GridType: 0
@@ -56,6 +59,10 @@ MonoBehaviour:
     CoordY: 4
     GridType: 0
     GridItemType: 0
+  - CoordX: 1
+    CoordY: 5
+    GridType: 0
+    GridItemType: 0
   - CoordX: 2
     CoordY: 0
     GridType: 0
@@ -76,6 +83,10 @@ MonoBehaviour:
     CoordY: 4
     GridType: 0
     GridItemType: 0
+  - CoordX: 2
+    CoordY: 5
+    GridType: 0
+    GridItemType: 0
   - CoordX: 3
     CoordY: 0
     GridType: 0
@@ -96,6 +107,10 @@ MonoBehaviour:
     CoordY: 4
     GridType: 0
     GridItemType: 0
+  - CoordX: 3
+    CoordY: 5
+    GridType: 0
+    GridItemType: 0
   - CoordX: 4
     CoordY: 0
     GridType: 0
@@ -114,5 +129,33 @@ MonoBehaviour:
     GridItemType: 0
   - CoordX: 4
     CoordY: 4
+    GridType: 0
+    GridItemType: 0
+  - CoordX: 4
+    CoordY: 5
+    GridType: 0
+    GridItemType: 0
+  - CoordX: 5
+    CoordY: 0
+    GridType: 0
+    GridItemType: 0
+  - CoordX: 5
+    CoordY: 1
+    GridType: 0
+    GridItemType: 0
+  - CoordX: 5
+    CoordY: 2
+    GridType: 0
+    GridItemType: 0
+  - CoordX: 5
+    CoordY: 3
+    GridType: 0
+    GridItemType: 0
+  - CoordX: 5
+    CoordY: 4
+    GridType: 0
+    GridItemType: 0
+  - CoordX: 5
+    CoordY: 5
     GridType: 0
     GridItemType: 0

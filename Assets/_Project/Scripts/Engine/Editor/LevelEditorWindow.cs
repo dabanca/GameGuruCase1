@@ -8,9 +8,7 @@ namespace _Project.Scripts.Engine.Editor
 {
     public class LevelEditorWindow : EditorWindow
     {
-        private int _row;
         private int _column;
-        private int _levelNumber;
 
         [MenuItem("Window/LevelEditor")]
         public static void ShowWindow()
@@ -20,27 +18,22 @@ namespace _Project.Scripts.Engine.Editor
 
         private void OnGUI()
         {
-             _levelNumber = EditorGUILayout.IntField("Level Number",_levelNumber);
-             _column = EditorGUILayout.IntSlider("X Size",_column, 1, 9);
-             _row = EditorGUILayout.IntSlider("Y Size",_row, 1, 9);
-
-             if (GUILayout.Button("Create Level"))
-             {
-                 CreateNewLevel();
-             }
+            _column = EditorGUILayout.IntSlider("N Size",_column, 1, 9);
+            
+            if (GUILayout.Button("Create Level"))
+                CreateNewLevel();
         }
 
         private void CreateNewLevel()
         {
             LevelDataSo levelData = CreateInstance<LevelDataSo>();
             levelData.xSize = _column;
-            levelData.ySize = _row;
-            levelData.LevelNumber = _levelNumber;
-            levelData.GridCellDataContainers = new List<GridCellDataContainer>(_row*_column);
+            levelData.ySize = _column;
+            levelData.GridCellDataContainers = new List<GridCellDataContainer>(_column*_column);
             
             for (int i = 0; i < _column; i++)
             {
-                for (int j = 0; j < _row; j++)
+                for (int j = 0; j < _column; j++)
                 {
                     var dataContainer = new GridCellDataContainer
                     {
@@ -51,7 +44,7 @@ namespace _Project.Scripts.Engine.Editor
                 }
             }
             
-            AssetDatabase.CreateAsset(levelData,"Assets/Resources/LevelData/"+"Level"+_levelNumber +".asset");
+            AssetDatabase.CreateAsset(levelData,"Assets/Resources/LevelData/"+"Level"+1 +".asset");
             AssetDatabase.SaveAssets();
             EditorUtility.FocusProjectWindow();
             Selection.activeObject = levelData;

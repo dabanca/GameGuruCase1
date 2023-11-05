@@ -1,7 +1,6 @@
-using _Project.Scripts.Core.Level;
 using UnityEngine;
 
-namespace _Project.Scripts.Core.GridItem
+namespace _Project.Scripts.Core.Level
 {
     public static class LevelDataLoader
     {
