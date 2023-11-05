@@ -2,7 +2,7 @@ using _Project.Scripts.Core.Grid.RuntimeData;
 using _Project.Scripts.Engine.Common;
 using UnityEngine;
 
-namespace _Project.Scripts.Engine
+namespace _Project.Scripts.Engine.Camera
 {
     public class CameraController : Singleton<CameraController>
     {

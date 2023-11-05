@@ -5,7 +5,7 @@ using _Project.Scripts.Core.Collections;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace _Project.Scripts.Engine
+namespace _Project.Scripts.Engine.Loaders
 {
     [Serializable]
     public class GridItemViewRefPair

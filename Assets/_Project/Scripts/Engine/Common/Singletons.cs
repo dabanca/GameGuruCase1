@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using _Project.Scripts.Engine.Camera;
+using _Project.Scripts.Engine.Loaders;
 
 namespace _Project.Scripts.Engine.Common
 {

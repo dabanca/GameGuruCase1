@@ -17,7 +17,6 @@ namespace _Project.Scripts.Core.Grid
             _gridType = gridType;
             _gridCellNeighbourManager = new GridCellNeighbourManager(this);
         }
-
         public void FindNeighbours()=> _gridCellNeighbourManager.FindNeighbours();
         public GridCell GetNeighbour(Directions direction) => _gridCellNeighbourManager.GetNeighbour(direction);
         public bool IsMatched(Directions direction) => _gridCellNeighbourManager.IsMatched(direction);

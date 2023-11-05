@@ -1,24 +1,22 @@
 using System.Threading.Tasks;
 
-namespace _Project.Scripts.Engine.GridItem{
-
-public class GridItemViewPoolHandler
+namespace _Project.Scripts.Engine.GridItem
 {
-    public static GridItemViewPoolHandler Instance { get; private set; }
-
-    public GridItemViewPoolHandler()
+    public class GridItemViewPoolHandler
     {
-        Instance = this;
-    }
+        public static GridItemViewPoolHandler Instance { get; private set; }
+        public GridItemViewPoolHandler()
+        {
+            Instance = this;
+        }
+        public async Task InitTileViewPool()
+        {
+            await GridItemViewPool.Instance.InitializePool();
+        }
 
-    public async Task InitTileViewPool()
-    {
-        await GridItemViewPool.Instance.InitializePool();
+        public void ReleaseTileViewPool()
+        {
+            GridItemViewPool.Instance.Release();
+        }
     }
-
-    public void ReleaseTileViewPool()
-    {
-        GridItemViewPool.Instance.Release();
-    }
-}
 }
