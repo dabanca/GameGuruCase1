@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2180543965060783960}
   - component: {fileID: 8290896157199362822}
-  - component: {fileID: -8025405817984568133}
   - component: {fileID: -237468645892486104}
-  m_Layer: 0
+  - component: {fileID: 8462549074091889360}
+  m_Layer: 6
   m_Name: BasicGridItemPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,32 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &-8025405817984568133
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9060405500241626203}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
 --- !u!114 &-237468645892486104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,3 +96,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc56e5f499a6874aae1836d860257a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &8462549074091889360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060405500241626203}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -1,17 +1,15 @@
 using _Project.Scripts.Core.Collections;
+using _Project.Scripts.Core.GridItem;
 using _Project.Scripts.Core.Match;
-using UnityEngine.EventSystems;
 
 namespace _Project.Scripts.Engine.GridItem
 {
-    public class BasicGridItemView : GridItemView,IPointerDownHandler
+    public class BasicGridItemView : GridItemView,IInteractable
     {
-        private readonly CheckMatch _checkMatch = new CheckMatch();
-        
-        public void OnPointerDown(PointerEventData eventData)
+        public void Interact(CheckMatch checkMatch)
         {
             ChangeItemView(GridItemType.Signed);
-            _checkMatch.SearchForMatch(GridItem.GridCell);
+            checkMatch.SearchForMatch(GridItem.GridCell);
         }
     }
 }
