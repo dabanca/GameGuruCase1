@@ -8,7 +8,7 @@ namespace _Project.Scripts.Engine.GridItem
     {
         public void Match()
         {
-            ChangeItemView(GridItemType.Basic,new BasicGridItem());
+            ChangeItemView(GridItemType.Basic);
         }
     }
 }

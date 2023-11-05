@@ -25,11 +25,10 @@ namespace _Project.Scripts.Engine.GridItem
             set => gameObject.SetActive(!value);
         }
 
-        protected void ChangeItemView(GridItemType gridItemType,Core.GridItem.GridItem gridItem)
+        protected void ChangeItemView(GridItemType gridItemType)
         {
             GridItemViewPool.Instance.AddToPool(this);
             var newView = GridItemViewPool.Instance.GetGridItemView(gridItemType);
-            newView.SetGridItem(gridItem);
             newView.Init(transform.parent,GridItem.GridCell.Coordinates.x,GridItem.GridCell.Coordinates.y);
         }
     }

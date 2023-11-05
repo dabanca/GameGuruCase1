@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using _Project.Scripts.Core.Collections;
+using _Project.Scripts.Core.GridItem;
 using UnityEngine.AddressableAssets;
 using Object = UnityEngine.Object;
 
@@ -32,8 +33,8 @@ namespace _Project.Scripts.Engine.GridItem
             _basicGridItemView = basicTask.Result;
             _signedGridItemView = signedTask.Result;
             
-            _basicGridItemView.SetGridItem(new Core.GridItem.BasicGridItem());
-            _signedGridItemView.SetGridItem(new Core.GridItem.SignedGridItem());
+            _basicGridItemView.SetGridItem(new BasicGridItem());
+            _signedGridItemView.SetGridItem(new SignedGridItem());
             
             FillPool();
         }
@@ -65,7 +66,7 @@ namespace _Project.Scripts.Engine.GridItem
             var prototype = ReturnViewWithType(gridItemType);
             var clone = Object.Instantiate(prototype);
             var gridItemView = clone.GetComponent<GridItemView>();
-            gridItemView.SetGridItem(prototype.GridItem);
+            gridItemView.SetGridItem(ReturnItemWithType(gridItemType));
             gridItemView.Hide = true;
             return gridItemView;
         }
@@ -84,6 +85,16 @@ namespace _Project.Scripts.Engine.GridItem
             {
                 GridItemType.Basic => _basicGridItemView,
                 GridItemType.Signed => _signedGridItemView,
+                _ => throw new ArgumentOutOfRangeException(nameof(gridItemType), gridItemType, null)
+            };
+        }
+        
+        private Core.GridItem.GridItem ReturnItemWithType(GridItemType gridItemType)
+        {
+            return gridItemType switch
+            {
+                GridItemType.Basic => new BasicGridItem(),
+                GridItemType.Signed => new SignedGridItem(),
                 _ => throw new ArgumentOutOfRangeException(nameof(gridItemType), gridItemType, null)
             };
         }
